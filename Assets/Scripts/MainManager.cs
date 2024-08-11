@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MainManager : MonoBehaviour
 {
-    public static MainManager Instance;
+    public static MainManager Instance {get; private set;}
     public Color TeamColor;
     void Start()
     {
@@ -38,7 +38,7 @@ public class MainManager : MonoBehaviour
     public void SaveColor()
     {
         SaveData data = new SaveData();
-        data.TeamColor = TeamColor;
+        data.TeamColor   = TeamColor;
 
         string json = JsonUtility.ToJson(data);
 
